@@ -151,7 +151,7 @@ bot.on("message", function(message) {
          message.channel.sendMessage(message.author.toString() + ` Pong! ${Date.now() - message.createdAt.getTime()}ms`);
          break;
       case "memeball":
-         if (args[1]) message.channel.sendMessage(message.author.toString() + memeball[Math.floor(Math.random() * memeballnode.length)]);
+         if (args[1]) message.channel.sendMessage(message.author.toString() + memeball[Math.floor(Math.random() * memeball.length)]);
          else message.channel.sendMessage("Usage: -memeball <message>");
          break;
       case "info":
