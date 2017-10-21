@@ -180,7 +180,7 @@ bot.on("message", function(message) {
          .setThumbnail("https://i.imgur.com/4lSdsCC.png", true)
          .setFooter("Memes.")
          .setTimestamp()
-         message.channel.sendEmbed(embed2);
+         message.author.sendMessage(embed2);
          break;
     case "quote":
          message.channel.sendMessage(message.author.toString() + quote[Math.floor(Math.random() * quote.length)]);
