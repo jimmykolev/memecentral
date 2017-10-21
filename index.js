@@ -177,6 +177,7 @@ bot.on("message", function(message) {
          .addField("-meme", "Sends you a meme!", true)
          .addField("-suggestion", "Accounts your suggestion!", true)
          .addField("-purge", "Kills 100 messages", true)
+         .addField("-update", "Tells you about the most recent update", true)
          .setThumbnail("https://i.imgur.com/4lSdsCC.png", true)
          .setFooter("Memes.")
          .setTimestamp()
@@ -211,15 +212,8 @@ bot.on("message", function(message) {
      else (message.channel.bulkDelete(100))
           message.channel.sendMessage("Messages have been purged.");
         break;
-        case "song":
-            const voiceChannel = message.member.voiceChannel;
-    if (!voiceChannel) return message.reply(`Please be in a voice channel first!`);
-    voiceChannel.join()
-      .then(connnection => {
-        const stream = ytdl("https://www.youtube.com/watch?v=dQw4w9WgXcQ", { filter: 'audioonly' });
-        const dispatcher = connnection.playStream(stream);
-        dispatcher.on('end', () => voiceChannel.leave());
-      });
+        case "update":
+         message.channel.sendmessage("Update 0.0.2 features; Welcome messages and more memes");
         break;
 
     default:
