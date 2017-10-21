@@ -159,7 +159,7 @@ bot.on("message", function(message) {
          .setColor(0xFF00a1)
          .addField("Author", "Jimmy/Disappointing", true)
          .addField("ID", "<@224935178227679232>", true)
-         .addField("Version", "0.0.1", true)
+         .addField("Version", "0.0.2", true)
          .setThumbnail("https://i.imgur.com/4lSdsCC.png")
          .setFooter("Memes.")
          .setTimestamp()
