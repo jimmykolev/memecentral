@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-
+const ytdl = require('ytdl-core');
 
 const PREFIX = "-";
 
@@ -211,7 +211,16 @@ bot.on("message", function(message) {
      else (message.channel.bulkDelete(100))
           message.channel.sendMessage("Messages have been purged.");
         break;
-
+        case "song":
+            const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`Please be in a voice channel first!`);
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=dQw4w9WgXcQ", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+      });
+        break;
 
     default:
          message.channel.sendMessage("That is not a command!")
