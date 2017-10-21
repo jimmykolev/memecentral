@@ -181,7 +181,7 @@ bot.on("message", function(message) {
          .setFooter("Memes.")
          .setTimestamp()
          message.author.sendMessage(embed2);
-         message.channel.sendmessage(message.author.toString() + " Help has been sent!";
+         message.channel.sendMessage(message.author.toString() + " Help has been sent!";
          break;
     case "quote":
          message.channel.sendMessage(message.author.toString() + quote[Math.floor(Math.random() * quote.length)]);
