@@ -136,8 +136,8 @@ bot.on('ready', function(){
     bot.user.setPresence({ game: { name: 'Use -help', type: 0 } });
 });
 
-bot.on("on", function(){
-   message.guild.channels.find("name", "general").sendMessage("I am now back online!");
+bot.on("guildMemberAdd", function(member) {
+    member.guild.channels.find("name", "welcome").sendMessage(member.toString() + " Welcome to Meme Central!");
 });
 
 bot.on("message", function(message) {
