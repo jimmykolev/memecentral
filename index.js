@@ -150,7 +150,7 @@ bot.on("message", function(message) {
       case "ping":
          message.channel.sendMessage(message.author.toString() + ` Pong! ${Date.now() - message.createdAt.getTime()}ms`);
          break;
-      case "memeball":
+      case "chillball":
          if (args[1]) message.channel.sendMessage(message.author.toString() + memeball[Math.floor(Math.random() * memeball.length)]);
          else message.channel.sendMessage("Usage: -memeball <message>");
          break;
@@ -159,9 +159,9 @@ bot.on("message", function(message) {
          .setColor(0xFF00a1)
          .addField("Author", "Jimmy/Disappointing", true)
          .addField("ID", "<@224935178227679232>", true)
-         .addField("Version", "0.0.2", true)
-         .setThumbnail("https://i.imgur.com/4lSdsCC.png")
-         .setFooter("Memes.")
+         .addField("Version", "0.0.1", true)
+         .setThumbnail("https://media.discordapp.net/attachments/377511714733686784/384360626912493570/Chill_boty.jpg")
+         .setFooter("Chill.")
          .setTimestamp()
          message.channel.sendEmbed(embed);
          break;
@@ -170,7 +170,7 @@ bot.on("message", function(message) {
          .setColor(0xFF00a1)
          .addField("-help", "Shows you this!", true)
          .addField("-ping", "Shows the ping!", true)
-         .addField("-memeball", "Basically 8ball!", true)
+         .addField("-chillball", "Basically 8ball!", true)
          .addField("-info", "Shows info about the bot!", true)
          .addField("-quote", "Shows you a nice quote!", true)
          .addField("-rate", "Rates what you give it!", true)
@@ -178,8 +178,8 @@ bot.on("message", function(message) {
          .addField("-suggestion", "Accounts your suggestion!", true)
          .addField("-purge", "Kills 100 messages", true)
          .addField("-update", "Tells you about the most recent update", true)
-         .setThumbnail("https://i.imgur.com/4lSdsCC.png", true)
-         .setFooter("Memes.")
+         .setThumbnail("https://media.discordapp.net/attachments/377511714733686784/384360626912493570/Chill_boty.jpg", true)
+         .setFooter("Chill.")
          .setTimestamp()
          message.channel.sendMessage(embed2);
          break;
@@ -196,7 +196,7 @@ bot.on("message", function(message) {
          .setColor(0xFF00a1)
          .setImage(memes[Math.floor(Math.random() * memes.length)])
          .setTitle("The Meme Generator")
-         .setFooter("Memes", "https://i.imgur.com/4lSdsCC.png")
+         .setFooter("Memes", "https://media.discordapp.net/attachments/377511714733686784/384360626912493570/Chill_boty.jpg")
          .setTimestamp()
          message.channel.sendEmbed(embed3);
          break;
@@ -207,13 +207,13 @@ bot.on("message", function(message) {
          else message.channel.sendMessage("Usage: -suggestion <suggestion>");
          break;
     case "purge":
-      if(!message.member.roles.some(r=>["Owner", "Mod", "Sr. Mod"].includes(r.name)) )
+      if(!message.member.roles.some(r=>["Executive", "Mod", "VIP"].includes(r.name)) )
          return message.reply("Sorry, you don't have permissions to use this!");
      else (message.channel.bulkDelete(100))
           message.channel.sendMessage("Messages have been purged.");
         break;
         case "update":
-         message.channel.sendmessage("Update 0.0.2 features; Welcome messages and more memes");
+         message.channel.sendmessage("Update 0.0.1 features; Renovation!");
         break;
 
     default:
